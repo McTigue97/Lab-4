@@ -17,11 +17,13 @@ import Container from 'react-bootstrap/Container';
 //Added Routing
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link,
   Routes
 } from "react-router-dom";
+//imports read.js from components
+import {Read} from './components/read';
+//imports create.js from components
+import {Create} from './components/create';
 
 //Extends is used to access react components
 class App extends React.Component {
@@ -49,10 +51,10 @@ class App extends React.Component {
 
         {/* Displays Content Component when home is clicked/my app*/}
         <Route path='/' element={<Content></Content>} exact></Route>
-        {/* Displays Header Component when read is clicked*/}
-        <Route path='read' element={<Header></Header>} exact></Route>
-        {/* Displays Footer Component when create is clicked*/}
-        <Route path='create' element={<Footer></Footer>} exact></Route>
+        {/* Displays Read Component when read is clicked*/}
+        <Route path='read' element={<Read></Read>} exact></Route>
+        {/* Displays Create Component when create is clicked*/}
+        <Route path='create' element={<Create></Create>} exact></Route>
       </Routes>
 
 
