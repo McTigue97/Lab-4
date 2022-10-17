@@ -1,44 +1,31 @@
 import React from "react";
 //imports books.js from components
 import { Books } from './books';
+//imports axios which will be used to intercept HTTP requests and response
+import axios from 'axios';
 
 export class Read extends React.Component{
 
+
+    //when this runs it will become visible 
+    componentDidMount() {
+
+        //axios will make http request to the link
+        axios.get('https://jsonblob.com/api/jsonblob/1027219693823606784')
+
+        //when response comes back it will update the state and return it to books
+        .then((response)=>{
+            this.setState({books:response.data})
+        })
+        //if there an error console will show the error
+        .catch((error)=>{
+            console.log(error);
+        })
+    }
+
     //state has an array called books
     state = {
-        books:
-        [
-            {
-            "title": "Learn Git in a Month of Lunches",
-            "isbn": "1617292419",
-            "pageCount": 0,
-            "thumbnailUrl":"https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/umali.jpg","status": "MEAP",
-            "authors": ["Rick Umali"],
-            "categories": []
-            },
-            {
-            "title": "MongoDB in Action, Second Edition",
-            "isbn": "1617291609",
-            "pageCount": 0,
-            "thumbnailUrl":"https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/banker2.jpg","status": "MEAP",
-            "authors": [
-            "Kyle Banker",
-            "Peter Bakkum",
-            "Tim Hawkins",
-            "Shaun Verch",
-            "Douglas Garrett"
-            ],
-            "categories": []
-            },
-            {
-            "title": "Getting MEAN with Mongo, Express, Angular, and Node",
-            "isbn": "1617292036",
-            "pageCount": 0,
-            "thumbnailUrl":"https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/sholmes.jpg","status": "MEAP",
-            "authors": ["Simon Holmes"],
-            "categories": []
-            }
-                ]
+        books:[]
     };
 
 
