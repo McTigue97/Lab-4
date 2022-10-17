@@ -6,7 +6,7 @@ import axios from 'axios';
 
 export class Read extends React.Component{
 
-
+    //(DidMount)When all the children elements and components are mounted in the Document Object Model then we call this method
     //when this runs it will become visible 
     componentDidMount() {
 
