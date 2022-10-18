@@ -14,7 +14,7 @@ export class Create extends React.Component{
         //binding for book author
         this.onChangeBookAuthor = this.onChangeBookAuthor.bind(this);
 
-        //when forem loads empty strings will be there
+        //when form loads empty strings will be there
         this.state = {
             title:'',
             cover: '',
@@ -25,7 +25,7 @@ export class Create extends React.Component{
     //2 methods that will be invoked
     //will take an event as an argument 
     handleSubmit(e){
-        e.preventDefault();
+        e.preventDefault(); // cancels the event
     //will display message in console
         console.log(`Button Clicked
         ${this.state.title},
@@ -41,19 +41,19 @@ export class Create extends React.Component{
     }
 
     //title is a variable 
-    onChangeBookTitle(e){
+    onChangeBookTitle(e){  // When the value inside the field changes it will update the state
         this.setState({
             title:e.target.value
         })
     }
     //method for book cover
-    onChangeBookCover(e){
+    onChangeBookCover(e){  // When the value inside the field changes it will update the state
         this.setState({
             cover:e.target.value
         })
     }
     //method for book author
-    onChangeBookAuthor(e){
+    onChangeBookAuthor(e){  // When the value inside the field changes it will update the state
         this.setState({
             author:e.target.value
         })
